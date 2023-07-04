@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Daunello\\source\\repos\\TaskManager\\TaskManager.csproj": {}
+    "C:\\Users\\Daunello\\source\\repos\\TaskManager\\Project\\TaskManager.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Daunello\\source\\repos\\TaskManager\\TaskManager.csproj": {
+    "C:\\Users\\Daunello\\source\\repos\\TaskManager\\Project\\TaskManager.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Daunello\\source\\repos\\TaskManager\\TaskManager.csproj",
+        "projectUniqueName": "C:\\Users\\Daunello\\source\\repos\\TaskManager\\Project\\TaskManager.csproj",
         "projectName": "TaskManager",
-        "projectPath": "C:\\Users\\Daunello\\source\\repos\\TaskManager\\TaskManager.csproj",
+        "projectPath": "C:\\Users\\Daunello\\source\\repos\\TaskManager\\Project\\TaskManager.csproj",
         "packagesPath": "C:\\Users\\Daunello\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Daunello\\source\\repos\\TaskManager\\obj\\",
+        "outputPath": "C:\\Users\\Daunello\\source\\repos\\TaskManager\\Project\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Daunello\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,34 @@
         "net7.0-windows7.0": {
           "targetAlias": "net7.0-windows",
           "dependencies": {
+            "FastReport.BusinessGraphics.Demo": {
+              "target": "Package",
+              "version": "[2022.2.0, )"
+            },
+            "FastReport.Compat": {
+              "target": "Package",
+              "version": "[2023.1.8, )"
+            },
+            "FastReport.Data.Excel": {
+              "target": "Package",
+              "version": "[2023.2.0, )"
+            },
+            "FastReport.Data.MySql": {
+              "target": "Package",
+              "version": "[2023.2.0, )"
+            },
+            "FastReport.DataVisualization": {
+              "target": "Package",
+              "version": "[2023.1.0, )"
+            },
+            "FastReport.Localization": {
+              "target": "Package",
+              "version": "[2023.2.20, )"
+            },
+            "FastReport.OpenSource": {
+              "target": "Package",
+              "version": "[2023.2.20, )"
+            },
             "Microsoft.EntityFrameworkCore.Proxies": {
               "target": "Package",
               "version": "[7.0.8, )"

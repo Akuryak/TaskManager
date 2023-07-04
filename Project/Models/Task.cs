@@ -33,6 +33,8 @@ public partial class Task
 
     public int? PreviousTaskId { get; set; }
 
+    public virtual Employee? ExecutiveEmployee { get; set; }
+
     public virtual Project IdNavigation { get; set; } = null!;
 
     public virtual ICollection<Task> InversePreviousTask { get; set; } = new List<Task>();
@@ -40,4 +42,31 @@ public partial class Task
     public virtual Task? PreviousTask { get; set; }
 
     public virtual TaskStatus Status { get; set; } = null!;
+
+    public Task()
+    {
+    }
+
+    public Task(int id, int projectId, string fullTitle, string? shortTitle, string? description, int? executiveEmployeeId, int statusId, DateTime createdTime, DateTime? updatedTime, DateTime? deletedTime, DateTime? deadliine, DateTime? startActualTime, DateTime? finishActualTime, int? previousTaskId, Employee? executiveEmployee, Project idNavigation, ICollection<Task> inversePreviousTask, Task? previousTask, TaskStatus status)
+    {
+        Id = id;
+        ProjectId = projectId;
+        FullTitle = fullTitle;
+        ShortTitle = shortTitle;
+        Description = description;
+        ExecutiveEmployeeId = executiveEmployeeId;
+        StatusId = statusId;
+        CreatedTime = createdTime;
+        UpdatedTime = updatedTime;
+        DeletedTime = deletedTime;
+        Deadliine = deadliine;
+        StartActualTime = startActualTime;
+        FinishActualTime = finishActualTime;
+        PreviousTaskId = previousTaskId;
+        ExecutiveEmployee = executiveEmployee;
+        IdNavigation = idNavigation;
+        InversePreviousTask = inversePreviousTask;
+        PreviousTask = previousTask;
+        Status = status;
+    }
 }

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Daunello\source\repos\TaskManager\obj\Debug\net7.0-windows\
+C:\Users\Daunello\source\repos\TaskManager\Project\obj\Debug\net7.0-windows\
 TaskManager
 none
 false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
-C:\Users\Daunello\source\repos\TaskManager\App.xaml
-61381240082
+C:\Users\Daunello\source\repos\TaskManager\Project\App.xaml
+91066680344
+271350393901
+221279543927
+235-1784578402
+Pages\AutorizationPage.xaml;Pages\DashboardPage.xaml;Pages\GantDiagrammPage.xaml;Pages\MainPage.xaml;Pages\TasksPage.xaml;UserControls\GantDiagramUserControl.xaml;UserControls\ProjectInfoUserControl.xaml;UserControls\TaskInfoUserControl.xaml;Windows\MainWindow.xaml;
 
-16-835424219
-215-2054239788
-Pages\DashboardPage.xaml;Pages\GantDiagrammPage.xaml;Pages\MainPage.xaml;Pages\TasksPage.xaml;UserControls\ProjectInfoUserControl.xaml;Windows\MainWindow.xaml;
-
-True
+False
 

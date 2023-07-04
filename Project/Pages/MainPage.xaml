@@ -25,11 +25,9 @@
             <Button Template="{DynamicResource MainButton}" x:Name="NavigateDashboardPageButton" Content="Дашборд" Grid.Row="0" Click="NavigateDashboardPageButton_Click"/>
             <Button Template="{DynamicResource MainButton}" x:Name="NavigateTasksPageButton" Content="Задачи" Grid.Row="1" Click="NavigateTasksPageButton_Click"/>
             <Button Template="{DynamicResource MainButton}" x:Name="NavigateGantDiagrammPageButton" Content="Диаграмма" Grid.Row="2" Click="NavigateGantDiagrammPageButton_Click"/>
-            <TextBox x:Name="SearchProjectsTextBox" Margin="5,5,5,0" Grid.Row="3" TextChanged="SearchProjectsTextBox_TextChanged" GotFocus="SearchProjectsTextBox_GotFocus" LostFocus="SearchProjectsTextBox_LostFocus"/>
-            <TextBlock x:Name="SearchProjectsTextBlock" Text="Поиск" Grid.Row="3" Foreground="Silver" Margin="10,0,0,5" HorizontalAlignment="Left"/>
             <ListBox Template="{DynamicResource MainListBox}" x:Name="ProjectsListBox" Margin="5,0,5,5" Grid.Row="4" HorizontalContentAlignment="Stretch" SelectionChanged="ProjectsListBox_SelectionChanged"/>
             <TextBlock x:Name="ProjectVersionAndBuildVersionTextBlock" Grid.Row="5" HorizontalAlignment="Center"/>
         </Grid>
-        <Frame x:Name="MainPageFrame" NavigationUIVisibility="Hidden" Grid.Column="1"/>
+        <Frame x:Name="MainPageFrame" NavigationUIVisibility="Hidden" Grid.Column="2"/>
     </Grid>
 </Page>

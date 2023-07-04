@@ -15,6 +15,8 @@ public partial class TaskManagerContext : DbContext
     {
     }
 
+    public virtual DbSet<Employee> Employees { get; set; }
+
     public virtual DbSet<Project> Projects { get; set; }
 
     public virtual DbSet<Task> Tasks { get; set; }
@@ -23,7 +25,7 @@ public partial class TaskManagerContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseLazyLoadingProxies().UseMySql("server=localhost;database=Taskmanager;user=root;password=12345", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.31-mysql"));
+        => optionsBuilder.UseLazyLoadingProxies().UseMySql("server=localhost;database=Taskmanager;user=root;password=12345", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.32-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -31,11 +33,29 @@ public partial class TaskManagerContext : DbContext
             .UseCollation("utf8mb4_0900_ai_ci")
             .HasCharSet("utf8mb4");
 
+        modelBuilder.Entity<Employee>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("employee");
+
+            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Login).HasMaxLength(15);
+            entity.Property(e => e.Name).HasMaxLength(45);
+            entity.Property(e => e.Password).HasMaxLength(15);
+            entity.Property(e => e.Patronomic).HasMaxLength(45);
+            entity.Property(e => e.Surname).HasMaxLength(45);
+        });
+
         modelBuilder.Entity<Project>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
             entity.ToTable("project");
+
+            entity.HasIndex(e => e.CreatorEmployeeId, "Creator_employee_idx");
+
+            entity.HasIndex(e => e.ResponsibleEmployeeId, "Executive_employee_idx");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.CreatedTime)
@@ -60,6 +80,15 @@ public partial class TaskManagerContext : DbContext
             entity.Property(e => e.StartScheduledDate)
                 .HasColumnType("datetime")
                 .HasColumnName("Start_scheduled_date");
+
+            entity.HasOne(d => d.IdNavigation).WithOne(p => p.ProjectIdNavigation)
+                .HasForeignKey<Project>(d => d.Id)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("Creator_employee");
+
+            entity.HasOne(d => d.ResponsibleEmployee).WithMany(p => p.ProjectResponsibleEmployees)
+                .HasForeignKey(d => d.ResponsibleEmployeeId)
+                .HasConstraintName("Responsible_employee");
         });
 
         modelBuilder.Entity<Task>(entity =>
@@ -67,6 +96,8 @@ public partial class TaskManagerContext : DbContext
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
             entity.ToTable("task");
+
+            entity.HasIndex(e => e.ExecutiveEmployeeId, "Employee_idx");
 
             entity.HasIndex(e => e.StatusId, "Status_idx");
 
@@ -102,6 +133,10 @@ public partial class TaskManagerContext : DbContext
             entity.Property(e => e.UpdatedTime)
                 .HasColumnType("datetime")
                 .HasColumnName("Updated_time");
+
+            entity.HasOne(d => d.ExecutiveEmployee).WithMany(p => p.Tasks)
+                .HasForeignKey(d => d.ExecutiveEmployeeId)
+                .HasConstraintName("Employee");
 
             entity.HasOne(d => d.IdNavigation).WithOne(p => p.Task)
                 .HasForeignKey<Task>(d => d.Id)

@@ -6,9 +6,87 @@
       xmlns:local="clr-namespace:TaskManager.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="DashboardPage">
+      Title="DashboardPage" Loaded="Page_Loaded">
 
     <Grid>
-        
+        <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListViewItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Незавершенные задачи"/>
+                    <ListView x:Name="UnfinishedTasksListView" Grid.Row="1"/>
+                </Grid>
+            </ListViewItem>
+            <ListViewItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Просроченные задачи"/>
+                    <ListView x:Name="OverdueTasksListView" Grid.Row="1"/>
+                </Grid>
+            </ListViewItem>
+            <ListViewItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Активные задачи"/>
+                    <ListView x:Name="ActiveTasksListView" Grid.Row="1"/>
+                </Grid>
+            </ListViewItem>
+            <ListViewItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Незавершенные задачи"/>
+                    <ListView x:Name="UnfinishedTasksForAWeekListView" Grid.Row="1"/>
+                </Grid>
+            </ListViewItem>
+            <ListViewItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Топ 5 сотрудников по кол-ву закрытых задач"/>
+                    <ListView x:Name="TopFiveEmpoloyeeFinishedTasksListView" Grid.Row="1">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Fullname}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ListViewItem>
+            <ListViewItem>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Топ 5 сотрудников по кол-ву просроченных задач"/>
+                    <ListView x:Name="TopFiveEmpoloyeeUnfinishedTasksListView" Grid.Row="1">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Fullname}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+            </ListViewItem>
+        </ListView>
     </Grid>
 </Page>

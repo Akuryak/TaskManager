@@ -21,27 +21,33 @@ namespace TaskManager.UserControls
     /// </summary>
     public partial class ProjectInfoUserControl : UserControl
     {
-        public ProjectInfoUserControl(Project project, int number)
+        public ProjectInfoUserControl(Project project)
         {
             InitializeComponent();
 
-            ProjectNumberTextBlock.Text = number.ToString();
+            DataContext = project;
 
+            try
+            {
+                GetImage(project);
+            }
+            catch
+            {
+                Assets.Helpers.ImageCreator.CreateImageFromProjectName(project);
+                GetImage(project);
+            }
+
+            ProjectImage.ToolTip = project.FullTitle;
+        }
+
+        private void GetImage(Project project)
+        {
             BitmapImage bitmapImage = new BitmapImage();
             bitmapImage.BeginInit();
             bitmapImage.UriSource = new Uri(project.Icon);
             bitmapImage.CacheOption = BitmapCacheOption.OnLoad;
             bitmapImage.EndInit();
             ProjectImage.Source = bitmapImage;
-
-            ProjectImage.ToolTip = project.FullTitle;
-            ProjectTitleTextBlock.Text = project.FullTitle;
-
-            if (project.Task != null)
-            {
-                ProjectDeadlineTextBlock.Text = project.Task.Deadliine.ToString();
-                MainGrid.Background = new BrushConverter().ConvertFrom(project.Task.Status.ColorHex) as Brush;
-            }
         }
     }
 }

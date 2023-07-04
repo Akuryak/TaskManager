@@ -3,5 +3,10 @@
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
     <Import Project="$(NuGetPackageRoot)system.text.json\7.0.0\buildTransitive\net6.0\System.Text.Json.targets" Condition="Exists('$(NuGetPackageRoot)system.text.json\7.0.0\buildTransitive\net6.0\System.Text.Json.targets')" />
     <Import Project="$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\7.0.0\buildTransitive\net6.0\Microsoft.Extensions.Logging.Abstractions.targets" Condition="Exists('$(NuGetPackageRoot)microsoft.extensions.logging.abstractions\7.0.0\buildTransitive\net6.0\Microsoft.Extensions.Logging.Abstractions.targets')" />
+    <Import Project="$(NuGetPackageRoot)fastreport.compat\2023.1.8\buildTransitive\netcoreapp3.0\FastReport.Compat.targets" Condition="Exists('$(NuGetPackageRoot)fastreport.compat\2023.1.8\buildTransitive\netcoreapp3.0\FastReport.Compat.targets')" />
+    <Import Project="$(NuGetPackageRoot)fastreport.localization\2023.2.20\buildTransitive\FastReport.Localization.targets" Condition="Exists('$(NuGetPackageRoot)fastreport.localization\2023.2.20\buildTransitive\FastReport.Localization.targets')" />
+    <Import Project="$(NuGetPackageRoot)fastreport.datavisualization\2023.1.0\buildTransitive\netcoreapp3.0\FastReport.DataVisualization.targets" Condition="Exists('$(NuGetPackageRoot)fastreport.datavisualization\2023.1.0\buildTransitive\netcoreapp3.0\FastReport.DataVisualization.targets')" />
+    <Import Project="$(NuGetPackageRoot)fastreport.data.mysql\2023.2.0\buildTransitive\netcoreapp3.1\FastReport.Data.MySql.targets" Condition="Exists('$(NuGetPackageRoot)fastreport.data.mysql\2023.2.0\buildTransitive\netcoreapp3.1\FastReport.Data.MySql.targets')" />
+    <Import Project="$(NuGetPackageRoot)fastreport.data.excel\2023.2.0\buildTransitive\netcoreapp3.1\FastReport.Data.Excel.targets" Condition="Exists('$(NuGetPackageRoot)fastreport.data.excel\2023.2.0\buildTransitive\netcoreapp3.1\FastReport.Data.Excel.targets')" />
   </ImportGroup>
 </Project>

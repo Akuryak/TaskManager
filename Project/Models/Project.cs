@@ -23,29 +23,13 @@ public partial class Project
 
     public string? Description { get; set; }
 
-    public int? CreatorEmployeeId { get; set; }
+    public int CreatorEmployeeId { get; set; }
 
     public int? ResponsibleEmployeeId { get; set; }
 
+    public virtual Employee IdNavigation { get; set; } = null!;
+
+    public virtual Employee? ResponsibleEmployee { get; set; }
+
     public virtual Task? Task { get; set; }
-
-    public Project()
-    {
-    }
-
-    public Project(int id, string fullTitle, string? shortTitle, string? icon, DateTime createdTime, DateTime? deletedTime, DateTime? startScheduledDate, DateTime? finishScheduledDate, string? description, int? creatorEmployeeId, int? responsibleEmployeeId, Task? task)
-    {
-        Id = id;
-        FullTitle = fullTitle;
-        ShortTitle = shortTitle;
-        Icon = icon;
-        CreatedTime = createdTime;
-        DeletedTime = deletedTime;
-        StartScheduledDate = startScheduledDate;
-        FinishScheduledDate = finishScheduledDate;
-        Description = description;
-        CreatorEmployeeId = creatorEmployeeId;
-        ResponsibleEmployeeId = responsibleEmployeeId;
-        Task = task;
-    }
 }

@@ -28,7 +28,7 @@ namespace TaskManager
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Assets.Helpers.PageManager.MainFrame = MainFrame;
-            Assets.Helpers.PageManager.Navigate(new Pages.MainPage(), "Планировщик задач");
+            Assets.Helpers.PageManager.Navigate(new Pages.AutorizationPage(), "Авторизация");
         }
     }
 }

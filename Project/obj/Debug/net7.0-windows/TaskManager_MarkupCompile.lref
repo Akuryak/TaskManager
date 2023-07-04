@@ -1,9 +1,12 @@
 ﻿
-FC:\Users\Daunello\source\repos\TaskManager\App.xaml;;
-FC:\Users\Daunello\source\repos\TaskManager\Pages\DashboardPage.xaml;;
-FC:\Users\Daunello\source\repos\TaskManager\Pages\GantDiagrammPage.xaml;;
-FC:\Users\Daunello\source\repos\TaskManager\Pages\MainPage.xaml;;
-FC:\Users\Daunello\source\repos\TaskManager\Pages\TasksPage.xaml;;
-FC:\Users\Daunello\source\repos\TaskManager\UserControls\ProjectInfoUserControl.xaml;;
-FC:\Users\Daunello\source\repos\TaskManager\Windows\MainWindow.xaml;;
+FC:\Users\Daunello\source\repos\TaskManager\Project\App.xaml;;
+FC:\Users\Daunello\source\repos\TaskManager\Project\Pages\AutorizationPage.xaml;;
+FC:\Users\Daunello\source\repos\TaskManager\Project\Pages\DashboardPage.xaml;;
+FC:\Users\Daunello\source\repos\TaskManager\Project\Pages\GantDiagrammPage.xaml;;
+FC:\Users\Daunello\source\repos\TaskManager\Project\Pages\MainPage.xaml;;
+FC:\Users\Daunello\source\repos\TaskManager\Project\Pages\TasksPage.xaml;;
+FC:\Users\Daunello\source\repos\TaskManager\Project\UserControls\GantDiagramUserControl.xaml;;
+FC:\Users\Daunello\source\repos\TaskManager\Project\UserControls\ProjectInfoUserControl.xaml;;
+FC:\Users\Daunello\source\repos\TaskManager\Project\UserControls\TaskInfoUserControl.xaml;;
+FC:\Users\Daunello\source\repos\TaskManager\Project\Windows\MainWindow.xaml;;
 

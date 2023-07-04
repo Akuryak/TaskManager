@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Pages\AutorizationPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Pages\DashboardPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,11 +22,20 @@
     <Compile Update="Pages\TasksPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UserControls\GantDiagramUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UserControls\ProjectInfoUserControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UserControls\TaskInfoUserControl.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Pages\AutorizationPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Pages\DashboardPage.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -36,7 +48,13 @@
     <Page Update="Pages\TasksPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UserControls\GantDiagramUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UserControls\ProjectInfoUserControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UserControls\TaskInfoUserControl.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Windows\MainWindow.xaml">
